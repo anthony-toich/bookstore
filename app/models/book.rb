@@ -5,4 +5,10 @@ class Book < ActiveRecord::Base
   validates :pages, numericality: { only_integer: true, greater_than_or_equal_to: 0}, unless: "pages.blank?"
   validates :price, numericality: { greater_than_or_equal_to: 0},
   if: "price.present?"
+
+  has_many :reviews, dependent: :destroy
+
+  def average_stars
+    reviews.average(:stars)
+  end
 end

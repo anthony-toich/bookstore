@@ -14,3 +14,12 @@
 <%= button_to 'Delete', @book,
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
+
+<p>
+  Read all
+  <%= link_to pluralize(@book.reviews.size, 'review'),
+                        book_reviews_path(@book) %>
+</p>
+
+<p><label>Average Review:</label> <%= format_average_stars(@book) %></p>
+
