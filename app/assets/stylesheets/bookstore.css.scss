@@ -1,2 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+body{
+  font-family: 'Lobster';
+  font-size: 1.5em;
+}
